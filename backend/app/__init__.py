@@ -29,6 +29,11 @@ def create_app():
     from app.routes.fitness_routes import fitness_bp
     app.register_blueprint(fitness_bp, url_prefix='/api/fitness')
 
+    from app.routes.ai_routes import ai_bp
+    app.register_blueprint(ai_bp, url_prefix='/api/ai')
+
+    
+
     with app.app_context():
         db.create_all()
 
